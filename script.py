@@ -28,7 +28,7 @@ for index in range(count):
     cv2.putText(template, name.upper(), org, font, fontScale, color, thick, cv2.LINE_AA);
     cv2.imwrite(f'.\participants\{usn}.png', template);
     print('Processing cert: {}/{}'.format(index+1, count))
-    template = cv2.imread('COP.png');
+    template = cv2.imread('template.png');
 
 import smtplib
 import os

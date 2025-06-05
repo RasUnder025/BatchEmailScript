@@ -1,7 +1,7 @@
 # BatchEmailScript
 
 A simple python script for college event organisers.<br>
-Generate and send certificates for mass number of participants through emails.
+Generate and send certificates for mass number of participants through emails, based on a template image and csv file.
 
 > *Warning: Do not misuse this script for malicious intentions.*
 
@@ -46,10 +46,39 @@ Any python IDE (preferrably [Jupyter Notebook](https://jupyter.org/install) )
 
 3. Replace the template.png and registrations.csv files in the directory and code.
 
-4. Setup the App Password for gmail and modify in the code.
+4. Modify the following in the code.
+
+## What to modify
+
+1. Replace the file path/names everywhere in the code.
+
+   ```python
+   part_df = pd.read_csv('./registrations.csv')
+   template = cv2.imread('template.png');
+   filename = "template.png"
+   ```
+
+2. Choose your various font preferences from [open cv fonts](https://codeyarns.com/tech/2015-03-11-fonts-in-opencv.html#gsc.tab=0).
+
+3. Modify the origin/starting pixels position in the certificate image (use MSpaint).
+
+   ```python
+   org = (563, 554)
+   ```
+
+4. Alter the column of values based on the csv file.
+
+   ```python
+   usn = part_df.iloc[index, 3]
+   name = str(part_df.iloc[index, 2])
+   to = part_df.iloc[index, 1]
+   filename = "participants\\{}.png".format(part_df.iloc[index, 3])
+   ```
+
+4. Setup the App Password for gmail and replace in 'gmail_pass'.
    
    [How to generate SMTP app password in gmail](https://medium.com/rails-to-rescue/how-to-set-up-smtp-credentials-with-gmail-for-your-app-send-email-cf236d11087d)
 
-5. Modify other blanks accordingly in the code.
+5. Fill the remaining blanks accordingly in the code.
 
 ## Run the script.py file.

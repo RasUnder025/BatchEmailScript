@@ -34,7 +34,7 @@ Any python IDE (preferrably [Jupyter Notebook](https://jupyter.org/install) )
 
 2. Install the libraries
   
-   Some libraries are pre-installed. If the following library are not installed, you may do so by:
+   Some libraries are pre-installed. If the following library are not installed, run the follwoing in CMD:
 
    ```bash
    pip install opencv-python

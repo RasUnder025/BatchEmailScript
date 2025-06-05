@@ -66,7 +66,7 @@ Best regards,
 example."""
 
 # what is the name of the file path we want to attach?
-filename = "\\template.png"
+filename = "template.png"
 
 # attach the file
 if os.path.exists(filename):  # ensure file exists
@@ -106,6 +106,6 @@ send_email(to, subject, body, filename) # attempt an initial test case
 for index in range(count): # iteration for all the emails in csv
     # email address in cvs file is column 1
     to = part_df.iloc[index, 1]
-    filename = "\\participants\\{}.png".format(part_df.iloc[index, 3])
+    filename = "participants\\{}.png".format(part_df.iloc[index, 3])
     send_email(to, subject, body, filename)
 print("Emails Successfully sent.");
